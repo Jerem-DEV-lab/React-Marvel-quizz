@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../Header";
 import Landing from "../Landing";
 import Footer from "../Footer";
@@ -11,17 +12,18 @@ import '../../App.css';
 
 function Index() {
   return (
-    <div>
-      <Header />
-
-        <Welcome/>
-        <Landing />
-        <Login />
-        <SignUp />
-        <ErrorPage />
-      <Footer/>
-    </div>
-  );
+    <Router>
+        <Header />
+        <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/welcome" component={Welcome}/>
+            <Route path="/login" component={Login} />
+            <Route path="/SignUp" component={SignUp} />
+            <Route component={ErrorPage} />
+        </ Switch>
+        <Footer />
+    </Router>
+    )
 }
 
 export default Index;
