@@ -18,8 +18,8 @@ function Index() {
         <Landing />
         <Login />
         <SignUp />
-        <Footer/>
         <ErrorPage />
+      <Footer/>
     </div>
   );
 }
