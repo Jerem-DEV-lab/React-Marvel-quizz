@@ -1,6 +1,6 @@
 import React, {useState, useContext } from "react";
-import { FirebaseContext } from "../Firebase";
 import { Link } from "react-router-dom";
+import { FirebaseContext } from "../Firebase";
 
 const SignUp = (props) => {
     const firebase = useContext(FirebaseContext);
@@ -42,7 +42,6 @@ const SignUp = (props) => {
         <div className="signUpLoginBox">
             <div className="slContainer">
                 <div className="formBoxLeftSignUp">
-
                 </div>
                 <div className="formBoxRight">
                     <div className="formContent">
