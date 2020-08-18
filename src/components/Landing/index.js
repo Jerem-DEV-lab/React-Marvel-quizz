@@ -1,7 +1,5 @@
 import React, {Fragment, useEffect, useRef, useState} from "react";
 import { Link } from "react-router-dom";
-import SignUp from "../SignUp";
-
 
 const Landing = () => {
 
@@ -48,5 +46,4 @@ const Landing = () => {
         </main>
     )
 }
-
 export default Landing;

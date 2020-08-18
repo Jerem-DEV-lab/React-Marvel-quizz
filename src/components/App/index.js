@@ -7,6 +7,7 @@ import Welcome from "../Welcome";
 import Login from "../Login";
 import SignUp from "../SignUp";
 import ErrorPage from "../ErrorPage";
+import ForgetPassword from "../ForgetPassword";
 import '../../App.css';
 
 
@@ -19,6 +20,7 @@ function Index() {
             <Route path="/welcome" component={Welcome}/>
             <Route path="/login" component={Login} />
             <Route path="/SignUp" component={SignUp} />
+            <Route path="/forgetpassword" component={ForgetPassword}/>
             <Route component={ErrorPage} />
         </ Switch>
         <Footer />
