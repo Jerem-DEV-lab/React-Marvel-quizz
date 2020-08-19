@@ -4,7 +4,6 @@ import { FirebaseContext } from '../Firebase';
 const Logout = () => {
     const firebase = useContext(FirebaseContext);
     const [checked, setChecked] = useState(false);
-    console.log(checked)
     useEffect(() => {
         return () => {
             if (setChecked){
