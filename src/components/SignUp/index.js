@@ -19,11 +19,17 @@ const SignUp = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        const { email, password } = loginData;
+        const { email, password , pseudo} = loginData;
         firebase.signupUser(email, password)
-            .then(user => {
+            .then(authUser => {
+                return firebase.user(authUser.user.uid).set({
+                    pseudo,
+                    email
+                });
+            })
+            .then(() => {
                 setLoginData({...data});
-                props.history.push('/welcome')
+                props.history.push('/welcome');
 
             })
             .catch(error => {
@@ -34,7 +40,7 @@ const SignUp = (props) => {
     const {pseudo, email, password, confirmPassword } = loginData;
 
     const btn = pseudo === '' || email === '' || password === '' || password !== confirmPassword
-        ? <button disabled>Inscription</button> : <button> Inscription</button>
+        ? <button disabled>Inscription</button> : <button className="btnSubmit"> Inscription</button>
 
     // gestion des erreurs
     const errorMsg = error !== '' && <span>{error.message}</span>;
