@@ -5,6 +5,7 @@ import { QuizMarvel } from "../QuizMarvel";
 import Levels from "../Levels";
 import ProgressBar from "../ProgressBar";
 import QuizOver from "../QuizOver";
+import { FaChevronRight } from 'react-icons/fa';
 
 toast.configure()
 
@@ -154,7 +155,7 @@ class Quiz extends Component{
                     className={`answerOptions ${this.state.userAnswer === option ? "selected" : null}`}
                     onClick={() => this.submitAnswer(option)}
                 >
-                    {option}
+                <FaChevronRight />{option}
                 </p>
             )
         })
